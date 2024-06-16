@@ -32,22 +32,23 @@ const sliding = (e) => {
     const currPosition = e.pageX - xAxis;
     carousel_container.scrollLeft = scrollLeft - currPosition;
     let condition;
+    console.log(scrollLeft);
+    console.log(
+      scrollLeft >=
+        carouselFirstElem.clientWidth + carouselFirstElem.clientWidth / 2
+    );
     if (scrollLeft <= carouselFirstElem.offsetWidth) {
       condition = 1;
     } else if (
       scrollLeft <= carouselFirstElem.offsetWidth === false &&
       scrollLeft >=
-        carousel_container.scrollWidth -
-          carouselFirstElem.offsetWidth -
-          remSize * 4.5 ===
+        carouselFirstElem.clientWidth + carouselFirstElem.clientWidth / 2 ===
         false
     ) {
       condition = 2;
     } else if (
       scrollLeft >=
-      carousel_container.scrollWidth -
-        carouselFirstElem.offsetWidth -
-        remSize * 4.5
+      carouselFirstElem.clientWidth + carouselFirstElem.clientWidth / 2
     ) {
       condition = 3;
     }
